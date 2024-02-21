@@ -16,7 +16,7 @@ app.post('/', async (req, res) => {
     const result = await ref.set({
         [time] : req.body
     },{ merge: true }); 
-    res.send("200");
+    res.status(200).send("EVENT_RECEIVED");
 });
 
 const port = process.env.PORT || 8000;
