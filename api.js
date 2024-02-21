@@ -11,6 +11,7 @@ app.get('/', (req, res) => {
     res.send(hubChallenge);
 });
 app.post('/', async (req, res) => {
+    console.log("triggered", req.body);
     const ref = db.collection('subscriptionData').doc('lDAJsezo5PQduLEW1yS1');
     const time = (Date.now());
     const result = await ref.set({
