@@ -13,9 +13,9 @@ app.get('/', (req, res) => {
 app.post('/', async (req, res) => {
     console.log("triggered", req.body);
     const ref = db.collection('subscriptionData').doc('lDAJsezo5PQduLEW1yS1');
-    const pageID = req.body.pageID;
+    const time = (Date.now());
     const result = await ref.set({
-        [pageID] : req.body
+        [time] : req.body
     },{ merge: true }); 
     res.status(200).send("EVENT_RECEIVED");
 });
